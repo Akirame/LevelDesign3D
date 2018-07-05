@@ -11,11 +11,11 @@ public class MovementScript : MonoBehaviour
 		cc = GetComponent<CharacterController>();
 	}
 	
-	void FixedUpdate()
+	void Update()
 	{
 		Vector3 move = Vector3.zero;
-		move.x = Input.GetAxis("Horizontal") * speed;
-		move.z = Input.GetAxis("Vertical") * speed;
+		move.z = Input.GetAxis("Horizontal") * speed;
+		move.x = Input.GetAxis("Vertical") * -speed;
 		cc.SimpleMove(move);
 	}	
 }
